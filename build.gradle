@@ -1,3 +1,41 @@
+plugins {
+    id 'base'
+}
+
 group 'de.dfki.mary'
 version '0.1.0-SNAPSHOT'
 description 'Upper Sorbian voice data for MaryTTS'
+
+repositories {
+    mavenLocal()
+
+    exclusiveContent {
+        forRepository {
+            ivy {
+                url 'https://digital.serbski-institut.de/marytts'
+                patternLayout {
+                    artifact '[module].[ext]'
+                }
+                metadataSources {
+                    artifact()
+                }
+            }
+        }
+        filter {
+            includeGroup 'de.serbski-institut'
+        }
+    }
+}
+
+configurations {
+    data
+}
+
+dependencies {
+    data group: 'de.serbski-institut', name: 'hsb_audio_data', version: '2022.10.10', ext: 'zip'
+}
+
+tasks.register('downloadData', Copy) {
+    into layout.buildDirectory.dir('data')
+    from configurations.data
+}
