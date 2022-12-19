@@ -1,5 +1,6 @@
 plugins {
     id 'base'
+    id 'de.dfki.mary.voicebuilding.marytts-kaldi-mfa'
 }
 
 group 'de.dfki.mary'
@@ -65,4 +66,12 @@ def unpackDataTask = tasks.register('unpackData') {
             }
         }
     }
+}
+
+convertTextToMaryXml {
+    srcDir = unpackDataTask.get().textDir
+}
+
+prepareForcedAlignment {
+    wavDir = unpackDataTask.get().wavDir
 }
