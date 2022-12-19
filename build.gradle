@@ -1,6 +1,7 @@
 plugins {
     id 'base'
     id 'de.dfki.mary.voicebuilding.marytts-kaldi-mfa'
+    id 'org.m2ci.msp.flaml'
 }
 
 group 'de.dfki.mary'
@@ -76,4 +77,31 @@ convertTextToMaryXml {
 
 prepareForcedAlignment {
     wavDir = unpackDataTask.get().wavDir
+}
+
+generateComments {
+    properties = [
+            Description: project.description,
+            Contact    : 'https://github.com/marytts/serbski-institut-hsb-data',
+            License    : 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
+    ]
+}
+
+generateFlac {
+    srcFiles = unpackDataTask.get().wavDir.asFileTree
+}
+
+generateYaml {
+    yamlFile = file("${project.name}.yaml")
+}
+
+injectText {
+    yamlSrcFile = generateYaml.yamlFile
+    textDir = unpackDataTask.get().textDir
+    yamlDestFile = file("${project.name}_text.yaml")
+}
+
+injectSegments {
+    yamlSrcFile = injectText.yamlDestFile
+    labDir = tasks.named('convertTextGridToXLab').get().destDir
 }
