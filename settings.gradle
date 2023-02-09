@@ -1,2 +1,3 @@
 rootProject.name = 'serbski-institut-hsb-data'
 includeBuild 'gradle-flaml-plugin'
+includeBuild 'marytts-lang-hsb'
