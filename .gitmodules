@@ -1,6 +1,0 @@
-[submodule "gradle-flaml-plugin"]
-	path = gradle-flaml-plugin
-	url = https://github.com/m2ci-msp/gradle-flaml-plugin.git
-[submodule "marytts-lang-hsb"]
-	path = marytts-lang-hsb
-	url = https://github.com/marytts/marytts-lang-hsb.git
