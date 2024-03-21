@@ -33,7 +33,7 @@ configurations {
 
 dependencies {
     data group: 'de.serbski-institut', name: 'hsb_audio_data', version: '20230117', ext: 'zip'
-    marytts group: 'de.dfki.mary', name: 'marytts-lang-hsb', version: '0.1.1'
+    marytts group: 'de.dfki.mary', name: 'marytts-lang-hsb', version: '0.1.2'
 }
 
 def unpackDataTask = tasks.register('unpackData') {
