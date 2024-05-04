@@ -4,6 +4,10 @@ Changelog
 [Unreleased]
 ------------
 
+### Added
+
+- More data from 2023-12-20
+
 [v0.1.2] (2024-04-23)
 ---------------------
 
