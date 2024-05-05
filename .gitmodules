@@ -1,0 +1,3 @@
+[submodule "marytts-lang-hsb"]
+	path = marytts-lang-hsb
+	url = https://github.com/marytts/marytts-lang-hsb.git
