@@ -8,6 +8,10 @@ Changelog
 
 - More data from 2023-12-20
 
+### Changed
+
+- Upgraded marytts-lang-hsb to v0.2.0
+
 [v0.1.2] (2024-04-23)
 ---------------------
 
