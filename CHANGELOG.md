@@ -7,6 +7,7 @@ Changelog
 ### Changed
 
 - Updated data to normalized audio
+- Upgraded marytts-lang-hsb to v0.2.1
 
 [v0.2.0] (2024-05-15)
 ---------------------
